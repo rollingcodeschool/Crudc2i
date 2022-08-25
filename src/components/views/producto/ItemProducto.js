@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import Swal from 'sweetalert2';
 
-const ItemProducto = ({producto}) => {
+const ItemProducto = ({producto, consultarAPI}) => {
     const {nombreProducto, id, categoria, imagen, precio} = {...producto}
     const URL = process.env.REACT_APP_API_CAFETERIA
 
@@ -31,7 +31,7 @@ const ItemProducto = ({producto}) => {
                             'success'
                         )
                         //recargar la tabla de productos
-                        
+                        consultarAPI();
                     }
                 }catch(error){
                     console.log(error)

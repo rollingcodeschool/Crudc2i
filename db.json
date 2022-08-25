@@ -1,20 +1,6 @@
 {
   "productos": [
     {
-      "nombreProducto": "café",
-      "precio": "350",
-      "imagen": "https://...",
-      "categoria": "bebida-caliente",
-      "id": 1
-    },
-    {
-      "nombreProducto": "licuado de d.",
-      "precio": "600",
-      "imagen": "https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "bebida-fria",
-      "id": 6
-    },
-    {
       "nombreProducto": "pan 1kg",
       "precio": "350",
       "imagen": "https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -27,6 +13,13 @@
       "imagen": "https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
       "categoria": "bebida-fria",
       "id": 10
+    },
+    {
+      "nombreProducto": "cafe",
+      "precio": "400",
+      "imagen": "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "bebida-caliente",
+      "id": 11
     }
   ]
 }
