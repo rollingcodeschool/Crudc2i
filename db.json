@@ -27,6 +27,13 @@
       "precio": "150",
       "categoria": "dulce",
       "id": 12
+    },
+    {
+      "nombreProducto": "brownie con almendras 2",
+      "precio": "100",
+      "imagen": "https://images.pexels.com/photos/45202/brownie-dessert-cake-sweet-45202.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      "categoria": "dulce",
+      "id": 13
     }
   ]
 }
