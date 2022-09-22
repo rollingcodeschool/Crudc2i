@@ -9,6 +9,8 @@ import Error404 from './components/views/Error404'
 import Menu from './components/common/Menu';
 import Footer from './components/common/Footer';
 import DetalleProducto from './components/views/DetalleProducto';
+import Login from './components/views/Login';
+import Registro from './components/views/Registro';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Menu></Menu>
         <Routes>
           <Route exact path='/' element={<Home></Home>} ></Route>
+          <Route exact path='/login' element={<Login></Login>} ></Route>
+          <Route exact path='/registro' element={<Registro></Registro>} ></Route>
           <Route exact path='/administrar' element={<AdministrarProductos></AdministrarProductos>} ></Route>
           <Route exact path='/administrar/crear' element={<CrearProducto></CrearProducto>} ></Route>
           <Route exact path='/administrar/editar/:id' element={<EditarProducto></EditarProducto>} ></Route>
