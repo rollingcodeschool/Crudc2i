@@ -1,16 +1,45 @@
 import {useState} from "react";
 import { Form, Button, Container, Card, Alert } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Login = ({setUsuarioLogueado}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cargandoUsuario, setCargandoUsuario] = useState(false);
+  const URL = process.env.REACT_APP_API_CAFETERIA_USUARIO
+  const navigate = useNavigate()
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     console.log("desde el form");
+    //valiar que el email y password son correctos
+    try{
+      const respuesta = await fetch(URL,{
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          email,
+          password
+        })
+      })
+
+      if(respuesta.status === 200){
+        const data = await respuesta.json();
+        console.log(data)
+        //almaceno el usuario en el state y localstorage
+        localStorage.setItem('tokenCafe', JSON.stringify(data))
+        setUsuarioLogueado(data)
+        //redireccionar al home
+        navigate('/')
+      }
+
+    }catch(error){
+      console.log(error)
+      alert('no se pudo loguear')
+    }
   };
 
   

@@ -11,15 +11,18 @@ import Footer from './components/common/Footer';
 import DetalleProducto from './components/views/DetalleProducto';
 import Login from './components/views/Login';
 import Registro from './components/views/Registro';
+import { useState } from 'react';
 
 function App() {
+  const [usuarioLogueado, setUsuarioLogueado] = useState({})
+
   return (
     <div>
       <BrowserRouter>
-        <Menu></Menu>
+        <Menu usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Menu>
         <Routes>
           <Route exact path='/' element={<Home></Home>} ></Route>
-          <Route exact path='/login' element={<Login></Login>} ></Route>
+          <Route exact path='/login' element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>} ></Route>
           <Route exact path='/registro' element={<Registro></Registro>} ></Route>
           <Route exact path='/administrar' element={<AdministrarProductos></AdministrarProductos>} ></Route>
           <Route exact path='/administrar/crear' element={<CrearProducto></CrearProducto>} ></Route>
