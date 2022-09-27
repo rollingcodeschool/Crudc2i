@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const EditarProducto = () => {
   //traer el parametro
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
 
   const [producto, setProducto] = useState({});
   const URL = process.env.REACT_APP_API_CAFETERIA;
@@ -53,7 +53,8 @@ const EditarProducto = () => {
             const resp = await fetch(`${URL}/${id}`,{
                 method: "PUT",
                 headers:{
-                    "Content-Type":"application/json"
+                    "Content-Type":"application/json",
+                    "x-token": JSON.parse(localStorage.getItem('tokenCafe')).token
                 },
                 body: JSON.stringify(productoEditar)
             })

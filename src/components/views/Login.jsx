@@ -12,7 +12,6 @@ const Login = ({setUsuarioLogueado}) => {
 
   const handleSubmit = async(e) => {
     e.preventDefault();
-    console.log("desde el form");
     //valiar que el email y password son correctos
     try{
       const respuesta = await fetch(URL,{
@@ -28,7 +27,7 @@ const Login = ({setUsuarioLogueado}) => {
 
       if(respuesta.status === 200){
         const data = await respuesta.json();
-        console.log(data)
+        // console.log(data)
         //almaceno el usuario en el state y localstorage
         localStorage.setItem('tokenCafe', JSON.stringify(data))
         setUsuarioLogueado(data)
@@ -44,7 +43,7 @@ const Login = ({setUsuarioLogueado}) => {
 
   
   return (
-    <Container>
+    <Container className="mainSection">
       <Card className="my-5">
         <Card.Header as="h5">Login</Card.Header>
         <Card.Body>
