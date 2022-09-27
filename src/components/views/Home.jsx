@@ -4,7 +4,7 @@ import CardProducto from "./producto/CardProducto"
 
 const Home = () => {
     const URL = process.env.REACT_APP_API_CAFETERIA;
-    console.log(URL);
+    // console.log(URL);
     const [productos, setProductos] = useState([]);
   
     useEffect(() => {
@@ -15,7 +15,7 @@ const Home = () => {
       try {
         const respuesta = await fetch(URL);
         const listaProductos = await respuesta.json();
-        console.log(listaProductos);
+        // console.log(listaProductos);
         setProductos(listaProductos);
       } catch (error) {
         console.log(error);
@@ -23,7 +23,7 @@ const Home = () => {
     }
     
     return (
-      <div className="container">
+      <div className="container mainSection">
         <h1 className="display-4 m-4">Pagina principal</h1>
         <hr />
         <Row xs={1} md={4} className="g-4">

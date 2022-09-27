@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
 const DetalleProducto = () => {
 
     const {id} = useParams();
-    console.log(id);
+    // console.log(id);
     const URL = process.env.REACT_APP_API_CAFETERIA;
     const [producto, setProducto] = useState({});
 
@@ -27,7 +27,7 @@ const DetalleProducto = () => {
     }
     
     return (
-        <Card className='container my-5'>
+        <Card className='container my-5 mainSection'>
             <Row className='w-75'>
                 <Col md={6}>
                     <img src={producto.imagen} alt={producto.nombreProducto} className="w-100" />

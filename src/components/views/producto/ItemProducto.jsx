@@ -22,7 +22,10 @@ const ItemProducto = ({producto, consultarAPI}) => {
                 //realizar la peticion para eliminar un producto DELETE
                 try{
                     const parametros = {
-                        method: "DELETE"
+                        method: "DELETE",
+                        headers:{
+                            "x-token": JSON.parse(localStorage.getItem('tokenCafe')).token
+                        }
                     }
                     const respuesta = await fetch(URL+'/'+_id, parametros);
                     if(respuesta.status === 200){
